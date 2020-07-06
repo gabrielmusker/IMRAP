@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class=pageheader>Add a new film to the database</h1>
+    <div class=formblock>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}
+            {% for error in form.title.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year(size=32) }}
+            {% for error in form.year.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.runtime.label }}<br>
+            {{ form.runtime(size=32) }}
+            {% for error in form.runtime.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.plot.label }}<br>
+            {{ form.plot(size=32) }}
+        </p>
+        <p>
+            {{ form.releasedate.label }}<br>
+            {{ form.releasedate(size=32) }}
+            {% for error in form.releasedate.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.director.label }}<br>
+            {{ form.director(size=32) }}
+            {% for error in form.director.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.actors.label }}<br>
+            {{ form.actors(size=32) }}
+            {% for error in form.actors.errors %}<br>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </div>
+{% endblock %}

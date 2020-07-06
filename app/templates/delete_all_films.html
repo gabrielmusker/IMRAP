@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class=pageheader>Delete all the films from this database!</h1>
+    <div class=formblock>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>{{ form.submit() }}</p>
+    </form>
+    </div>
+{% endblock %}

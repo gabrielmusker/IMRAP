@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>IMRAP</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}" />
+    </head>
+    <body>
+          <div>
+            <a class=action_blue href="{{ url_for('index') }}">Home</a>
+            <a class=action_blue href="{{ url_for('add_film') }}">Add Film</a>
+            <a class=action_blue href="{{ url_for('remove_film') }}">Remove Film</a>
+            <a class=action_blue href="{{ url_for('import_films') }}">Import Films</a>
+            <a class=action_blue href="{{ url_for('delete_all_films') }}">Remove All Films From IMRAP</a>
+          </div>
+          <hr>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

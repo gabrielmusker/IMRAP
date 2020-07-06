@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class=siteheader>IMRAP</h1>
+    {% for film in films %}
+    <div class=filmblock>
+
+         <p class=filmtitle>{{ film.title }} ({{ film.year }})</p>
+
+         <p class=filmsummary>| {{ film.runtime }} minutes | Released {{ film.releasedate.date() }} |
+                Director: {{ film.director }} | Stars: {{ film.actors }} |</p>
+
+         <p class=filmplot> {{ film.plot }} </p>
+
+         <p class=spacer></p>
+
+    </div>
+    {% endfor %}
+{% endblock %}
